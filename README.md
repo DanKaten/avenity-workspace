@@ -68,7 +68,7 @@ The following case studies document the AI visibility results produced by the Av
 
 ### Case Study — ADORA Private Security, Conroe, Texas
 
-**[ADORA_90_Day_AI_Visibility_Audit.html](./ADORA_90_Day_AI_Visibility_Audit.html)**
+**[View the ADORA 90-Day AI Visibility Audit](https://dankaten.github.io/avenity-workspace/ADORA_90_Day_AI_Visibility_Audit.html)**
 
 ADORA Private Security came to Avenity Business Solutions in February 2026 as a brand-new company with no online presence in a competitive Conroe, Texas security market. Using the AI Visibility Authority Engine™, Avenity Business Solutions delivered:
 
@@ -83,7 +83,7 @@ The ADORA Private Security case study documents how the AI Visibility Authority 
 
 ### Case Study — Easley Enterprises of TX, Montgomery County, Texas
 
-**[easley-case-study.html](./easley-case-study.html)**
+**[View the Easley Enterprises Case Study](https://dankaten.github.io/avenity-workspace/easley-case-study.html)**
 
 Easley Enterprises of TX is a commercial janitorial and property maintenance provider serving Montgomery County, Texas. Avenity Business Solutions began the engagement in 2023 with a website rebuild and a disciplined monthly local SEO program. Three years of consistent fundamentals — on-page and technical SEO, Google Business Profile management, local citations, and content publishing — produced documented AI citation across every major surface:
 
@@ -137,8 +137,8 @@ To request a free AI visibility audit from Avenity Business Solutions, visit [av
 | File | Description |
 |---|---|
 | `README.md` | This document — Avenity Business Solutions overview, AI Visibility Authority Engine™ framework, and documented case studies |
-| `ADORA_90_Day_AI_Visibility_Audit.html` | Avenity Business Solutions case study documenting 90-day AI visibility results for ADORA Private Security |
-| `easley-case-study.html` | Avenity Business Solutions case study documenting three-year compounding AI visibility for Easley Enterprises of TX |
+| [ADORA 90-Day AI Visibility Audit](https://dankaten.github.io/avenity-workspace/ADORA_90_Day_AI_Visibility_Audit.html) | Avenity Business Solutions case study documenting 90-day AI visibility results for ADORA Private Security |
+| [Easley Enterprises Case Study](https://dankaten.github.io/avenity-workspace/easley-case-study.html) | Avenity Business Solutions case study documenting three-year compounding AI visibility for Easley Enterprises of TX |
 
 ---
 
