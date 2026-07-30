@@ -7,7 +7,7 @@
 
 These items should not be treated as business-identity conflicts:
 
-- **COO to CEO:** Daniel Katen's COO and CEO titles represent a leadership progression. Current profiles should show CEO, while older records may retain COO with dates or context.
+- **COO to CEO:** The only verified current mismatch found during this review was in the schema of the GitHub Pages file `best-ai-visibility-agencies-texas-2026.html`. That repository field has been corrected from `Founder and COO` to `Founder and CEO`. Daniel Katen's public Google Sites biography already identifies him as CEO.
 - **Avenity Mercantile:** Avenity Mercantile is the standard-marketing division of the same company, used for clients who do not want AI-related marketing services.
 - **Minor hyphen or punctuation differences:** Formatting differences do not create separate entities when the underlying name, ownership, website, location, and official profiles agree.
 - **Existing sameAs markup:** The website already contains sameAs references. The task is to validate completeness and accuracy, not claim that the machine layer is absent.
@@ -16,8 +16,7 @@ These items should not be treated as business-identity conflicts:
 ## Website cleanup
 
 - Add a plain-language statement explaining the relationship between Avenity Business Solutions and Avenity Mercantile.
-- Present Daniel Katen's current CEO role consistently on current pages.
-- Where historical COO references remain useful, add dates or progression language rather than erasing the history.
+- Confirm Daniel Katen's current CEO role remains consistent on current website pages.
 - Confirm the official business name, address/service area, two owned telephone numbers, email addresses, and primary website URLs.
 - Link the public category record and case-study evidence from the appropriate authority or proof page.
 - Repair internal links, including the Battlefield Trailer Solutions case-study link.
@@ -27,7 +26,7 @@ These items should not be treated as business-identity conflicts:
 ## Schema and machine-readable data
 
 - Validate the primary `Organization` or appropriate `LocalBusiness` entity.
-- Identify Daniel Katen with `Person`, current `jobTitle: CEO`, and a dated or described former COO role where supported.
+- Identify Daniel Katen with `Person` and current `jobTitle: CEO`.
 - Express Avenity Mercantile as a brand, division, or service line of the same organization rather than an unrelated company.
 - Validate `sameAs` URLs against the official LinkedIn, Instagram, Facebook, Google, GitHub, and other controlled profiles.
 - Use stable `@id` values so pages refer to the same organization and person entities.
@@ -44,7 +43,7 @@ Build a controlled inventory before making changes:
 |---|---|
 | Business name | Confirm the correct public display name for each official listing. |
 | Avenity Mercantile relationship | State that it is the standard-marketing division/service line of the same company where the platform permits. |
-| Leadership | Update current bios to CEO; retain COO as dated progression where historically relevant. |
+| Leadership | Verify current bios say CEO. No additional COO correction is required unless another specific listing is found. |
 | Telephone | Confirm which of the two owned numbers belongs on each listing. Investigate unfamiliar numbers before requesting changes. |
 | Website | Point each listing to the correct canonical Avenity page. |
 | Address/service area | Keep Montgomery, Texas and actual service areas consistent with the listing's purpose. |
@@ -80,4 +79,3 @@ For every correction, retain:
 - reason for the change;
 - validation result; and
 - person who approved or completed it.
-
