@@ -1,81 +1,152 @@
-# Website, Schema, and Listings Cleanup Register
+# Verified Website, Schema, and Listings Corrections
 
-**Scope:** Avenity Business Solutions and Avenity Mercantile  
-**Rule:** Preserve existing evidence and content. Correct through additions, clarifications, and version-controlled revisions. Do not delete source material.
+**Evidence reviewed:** July 30, 2026
 
-## Confirmed interpretation rules
+This register contains only discrepancies observed on live pages or in live structured data. It does not include theoretical checks.
 
-These items should not be treated as business-identity conflicts:
+## 1. Avenity Business Solutions homepage: incorrect geographic coordinates
 
-- **COO to CEO:** The only verified current mismatch found during this review was in the schema of the GitHub Pages file `best-ai-visibility-agencies-texas-2026.html`. That repository field has been corrected from `Founder and COO` to `Founder and CEO`. Daniel Katen's public Google Sites biography already identifies him as CEO.
-- **Avenity Mercantile:** Avenity Mercantile is the standard-marketing division of the same company, used for clients who do not want AI-related marketing services.
-- **Minor hyphen or punctuation differences:** Formatting differences do not create separate entities when the underlying name, ownership, website, location, and official profiles agree.
-- **Existing sameAs markup:** The website already contains sameAs references. The task is to validate completeness and accuracy, not claim that the machine layer is absent.
-- **Telephone numbers:** Only verified Avenity-owned numbers should be standardized. Unfamiliar numbers must be traced to an actual controlled listing before any correction is requested.
+**Page:** https://avenitybusinesssolutions.com/  
+**Location:** `ProfessionalService` JSON-LD
 
-## Website cleanup
+The schema declares the correct Montgomery, Texas address but supplies:
 
-- Add a plain-language statement explaining the relationship between Avenity Business Solutions and Avenity Mercantile.
-- Confirm Daniel Katen's current CEO role remains consistent on current website pages.
-- Confirm the official business name, address/service area, two owned telephone numbers, email addresses, and primary website URLs.
-- Link the public category record and case-study evidence from the appropriate authority or proof page.
-- Repair internal links, including the Battlefield Trailer Solutions case-study link.
-- Confirm each important page has a unique title, description, canonical URL, and crawlable internal link.
-- Preserve the original case-study screenshots and dates.
+```json
+"latitude": 40.0641205,
+"longitude": -83.0675592
+```
 
-## Schema and machine-readable data
+Latitude 40 and longitude -83 are not in Montgomery, Texas. Replace them with the coordinates for the declared business location or remove the `geo` node until the correct coordinates are available.
 
-- Validate the primary `Organization` or appropriate `LocalBusiness` entity.
-- Identify Daniel Katen with `Person` and current `jobTitle: CEO`.
-- Express Avenity Mercantile as a brand, division, or service line of the same organization rather than an unrelated company.
-- Validate `sameAs` URLs against the official LinkedIn, Instagram, Facebook, Google, GitHub, and other controlled profiles.
-- Use stable `@id` values so pages refer to the same organization and person entities.
-- Confirm `url`, `logo`, `telephone`, `email`, `address`, `areaServed`, `founder`, and service information.
-- Connect case studies to Avenity using accurate `provider`, `author`, `about`, or `mentions` relationships where appropriate.
-- Add machine-readable links to the category evidence JSON without making unsupported ranking guarantees.
-- Test the rendered schema and preserve dated validation results.
+## 2. Avenity Business Solutions homepage: two disconnected organization descriptions
 
-## Listing-site cleanup
+**Page:** https://avenitybusinesssolutions.com/
 
-Build a controlled inventory before making changes:
+The homepage emits:
 
-| Field | Required action |
-|---|---|
-| Business name | Confirm the correct public display name for each official listing. |
-| Avenity Mercantile relationship | State that it is the standard-marketing division/service line of the same company where the platform permits. |
-| Leadership | Verify current bios say CEO. No additional COO correction is required unless another specific listing is found. |
-| Telephone | Confirm which of the two owned numbers belongs on each listing. Investigate unfamiliar numbers before requesting changes. |
-| Website | Point each listing to the correct canonical Avenity page. |
-| Address/service area | Keep Montgomery, Texas and actual service areas consistent with the listing's purpose. |
-| Categories | Use categories that match the services actually offered; distinguish standard marketing from AI-visibility work through descriptions and service fields. |
-| Social profiles | Standardize descriptions and destination URLs while treating punctuation differences as formatting, not separate identities. |
+- a `ProfessionalService` entity with no `@id` and an empty `sameAs` array; and
+- a separate `Corporation` entity with `@id` `https://avenitybusinesssolutions.com#Organization` and three social profiles.
 
-Priority platforms:
+These describe the same company but are not joined by a shared identifier. Assign the same stable organization `@id` to the business entity or consolidate the overlapping organization nodes. Preserve the existing official Facebook, LinkedIn, and Instagram URLs.
 
-- Google Business Profile
-- Bing Places
-- Apple Business Connect
-- LinkedIn company and Daniel Katen profiles
-- Instagram and Facebook
-- GitHub organization/repository references
-- Major business directories already used by Avenity
+## 3. Avenity Business Solutions homepage: invalid aggregate-rating scale
 
-## Indexing and search controls
+**Page:** https://avenitybusinesssolutions.com/  
+**Location:** `aggregateRating` JSON-LD
 
-- Check Google Search Console coverage for each money page and evidence page.
-- Verify no unintended `noindex`, robots.txt block, canonical mismatch, redirect, or sitemap omission exists.
-- Record de-indexing and re-indexing events with dates and affected URLs.
-- Submit corrected URLs only after the page, canonical, schema, and internal links agree.
-- Monitor instead of repeatedly rewriting pages without evidence of the cause.
+The schema currently declares:
 
-## Completion evidence
+```json
+"ratingValue": "5.0",
+"bestRating": 5,
+"worstRating": 5
+```
 
-For every correction, retain:
+For a five-point rating scale, `worstRating` should be `1`, not `5`.
 
-- the platform and exact URL;
-- before and after captures;
-- date and time;
-- field changed;
-- reason for the change;
-- validation result; and
-- person who approved or completed it.
+## 4. Avenity Mercantile homepage: visible content does not match the stated role
+
+**Page:** https://avenitymercantile.com/
+
+Avenity Mercantile is the standard-marketing side of the business for clients who do not want AI-related marketing. The live homepage instead leads with:
+
+- “AI Visibility, GEO & AEO Services in Montgomery, TX”
+- the AI Visibility Authority Engine;
+- ChatGPT, Google AI Overviews, and Perplexity; and
+- Avenity Business Solutions as the primary service identity.
+
+Replace the homepage positioning with Avenity Mercantile’s actual traditional services: Google Ads, Meta Ads, TikTok Ads, paid social, traditional SEO, website support, lead generation, and reporting. Link to Avenity Business Solutions as the related AI-visibility service rather than using ABS as the Mercantile homepage’s primary identity.
+
+## 5. Avenity Mercantile homepage: conflicting organization names for one `@id`
+
+**Page:** https://avenitymercantile.com/  
+**Shared identifier:** `https://avenitymercantile.com/#organization`
+
+Three JSON-LD blocks use the same organization `@id` but give it different names:
+
+1. `Strategic Growth For Your Business`
+2. `Avenity Mercantile`
+3. `Avenity Marketing`
+
+The third block also uses `Avenity Business Solutions` as the alternate name, while the first WebSite node is named `Avenity Business Solutions - Strategic Growth For Your Business`.
+
+Use `Avenity Mercantile` as the organization and WebSite name for this domain. Consolidate or remove the duplicate generated nodes so the same `@id` does not identify three different names.
+
+## 6. Avenity Mercantile homepage: conflicting founder definitions
+
+**Page:** https://avenitymercantile.com/
+
+Two schema blocks define founders differently for the same organization `@id`:
+
+- one identifies Andrea Katen as founder; and
+- another identifies Daniel Katen and Andrea Katen.
+
+Publish one authoritative founder definition for the Mercantile entity and use it consistently.
+
+## 7. Avenity Mercantile homepage: inconsistent official-profile connections
+
+**Page:** https://avenitymercantile.com/
+
+The three organization blocks contain different `sameAs` sets, including:
+
+- `/avenitymercantile/` and `/avenitybusiness` Instagram destinations;
+- a Facebook share link in one block and a canonical Facebook page in another; and
+- different LinkedIn and YouTube coverage.
+
+Use one merged list of canonical, official profile URLs on the authoritative `Avenity Mercantile` organization node.
+
+## 8. Conroe/Lake Conroe Chamber listing: conflicting main telephone number
+
+**Listing:** https://www.chamber.conroe.org/list/member/avenity-business-solutions-5200879
+
+The business header displays:
+
+```text
+(281) 733-5151
+```
+
+The Daniel Katen representative section on the same listing displays:
+
+```text
+(936) 701-0994
+```
+
+The first number is outside the two Avenity-owned numbers identified by the business. Replace the business-header number with the correct current Avenity number.
+
+## 9. Yellow Pages and Superpages: non-Avenity telephone number and closed hours
+
+**Listings:**
+
+- https://www.yellowpages.com/nationwide/mip/avenity-mercantile-571937189
+- https://www.superpages.com/nationwide/bpp/avenity-mercantile-571937189
+
+Both listings display:
+
+```text
+(832) 422-6727
+```
+
+This number is outside the two identified Avenity-owned numbers. The listings also show the business as closed Monday through Sunday. Replace the telephone number and operating hours with the current Mercantile information.
+
+## 10. Yahoo Local: wrong website destination and outdated positioning
+
+**Listing:** https://local.yahoo.com/info-233036553-avenity-business-solutions-montgomery/
+
+The listing is named `Avenity Business Solutions` but points to:
+
+```text
+avenitymercantile.com
+```
+
+Its description also says ABS:
+
+- focuses exclusively on private-sector industrial firms;
+- targets companies with $5M–$30M in revenue; and
+- operates in the Houston market.
+
+That description conflicts with the current ABS positioning for local and regional service businesses and the broader documented industry record. Change the destination to `https://avenitybusinesssolutions.com/` and replace the description with the current ABS service scope.
+
+## GitHub-only correction already handled
+
+The schema in `best-ai-visibility-agencies-texas-2026.html` identified Daniel Katen as `Founder and COO`. It has been corrected in the repository branch to `Founder and CEO`. This is not a website or listings task.
+
