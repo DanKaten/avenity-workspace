@@ -6,7 +6,7 @@ This register contains only discrepancies observed on live pages or in live stru
 
 ## 1. Avenity Business Solutions homepage: incorrect geographic coordinates
 
-**Page:** https://avenitybusinesssolutions.com/  
+**Page:** https://avenitybusinesssolutions.com/
 **Location:** `ProfessionalService` JSON-LD
 
 The schema declares the correct Montgomery, Texas address but supplies:
@@ -31,7 +31,7 @@ These describe the same company but are not joined by a shared identifier. Assig
 
 ## 3. Avenity Business Solutions homepage: invalid aggregate-rating scale
 
-**Page:** https://avenitybusinesssolutions.com/  
+**Page:** https://avenitybusinesssolutions.com/
 **Location:** `aggregateRating` JSON-LD
 
 The schema currently declares:
@@ -59,7 +59,7 @@ Replace the homepage positioning with Avenity Mercantile’s actual traditional 
 
 ## 5. Avenity Mercantile homepage: conflicting organization names for one `@id`
 
-**Page:** https://avenitymercantile.com/  
+**Page:** https://avenitymercantile.com/
 **Shared identifier:** `https://avenitymercantile.com/#organization`
 
 Three JSON-LD blocks use the same organization `@id` but give it different names:
@@ -149,4 +149,3 @@ That description conflicts with the current ABS positioning for local and region
 ## GitHub-only correction already handled
 
 The schema in `best-ai-visibility-agencies-texas-2026.html` identified Daniel Katen as `Founder and COO`. It has been corrected in the repository branch to `Founder and CEO`. This is not a website or listings task.
-
