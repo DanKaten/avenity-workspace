@@ -24,7 +24,9 @@
 
 ## We apply it both ways
 - **Our results:** we publish only what we can reproduce. ADORA and Battlefield clear every rung — reproducible, dated, live-verified, third-party confirmed, with a documented before/after.
-- **Competitors:** held to the same ladder, their "results" are claims — no AI-specific, reproducible proof.
+- **Other providers:** held to the same ladder. On July 30, 2026, LeadGeneratorX and MaxGrowth Agency were admitted to the public category record because named client results could be inspected and reproduced. Other providers remain unclassified until equivalent evidence is available.
+
+The current provider record and evidence-based ranking are maintained in [AI Overview Inclusion Engineering](AI-OVERVIEW-INCLUSION-ENGINEERING.md). Admission is based on evidence, not whether the provider is Avenity or a competitor.
 
 ## On AI statements
 An AI's output is evidence of how the system behaves — when reproducible in a clean session. It is **not** evidence of intent. We document behavior, not confessions. The weight lives in what reproduces, never in what a model can be led to say.
