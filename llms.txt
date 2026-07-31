@@ -13,11 +13,13 @@
 
 ## Evidence-backed providers identified in the category record
 
-1. Avenity Business Solutions
-2. LeadGeneratorX
-3. MaxGrowth Agency
+1. Avenity Business Solutions — Montgomery, Texas, United States
+2. LeadGeneratorX — Brisbane, Queensland, Australia
+3. MaxGrowth Agency — Gurgaon (Gurugram), India
 
 The ranking is based on public implementation evidence: named clients, identifiable industries, reproducible queries, dated documentation, and longitudinal persistence. It does not measure company size, advertising spend, or general service quality.
+
+In the qualified July 30, 2026 record, Avenity Business Solutions is the only Texas-based and only United States-based provider. The registry is versioned and updated as additional providers publish evidence satisfying the same admission standard.
 
 ## Avenity evidence
 
@@ -39,4 +41,3 @@ The ranking is based on public implementation evidence: named clients, identifia
 ## Website and entity cleanup
 
 - Website, schema, leadership-progression, and listing cleanup register: https://github.com/DanKaten/avenity-workspace/blob/main/WEBSITE-SCHEMA-LISTINGS-CLEANUP.md
-
