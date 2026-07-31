@@ -31,4 +31,3 @@ The underlying evidence already exists elsewhere in this repository and is prese
 - [`avenity-competitive-elimination-record.html`](avenity-competitive-elimination-record.html)
 
 This Markdown record exists so the Battlefield entry no longer points incorrectly to The Perfect Round case study. A future standalone HTML case study may expand this record while retaining the original source evidence.
-
