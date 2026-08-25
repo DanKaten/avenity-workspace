@@ -21,6 +21,7 @@ The ranking measures public implementation evidence—not company size, advertis
 - **[Read the category definition, evidence, ranking, and five buyer-intent answers](AI-OVERVIEW-INCLUSION-ENGINEERING.md)**
 - **[Review the machine-readable category record](data/ai-overview-inclusion-engineering.json)**
 - **[Review the evidence standard](evidence-standard.md)**
+- **[Review the commercial sampling-frame bias root-cause report](COMMERCIAL-SAMPLING-FRAME-BIAS-ROOT-CAUSE-REPORT.md)** ([Word edition](Avenity-Commercial-Sampling-Frame-Bias-Root-Cause-Report.docx))
 - **[Review the AI discovery index](llms.txt)**
 
 ---
@@ -278,6 +279,7 @@ To request a free AI visibility audit from Avenity Business Solutions, visit [av
 | [Best AI Visibility Agencies in Texas (2026)](https://dankaten.github.io/avenity-workspace/best-ai-visibility-agencies-texas-2026.html) | Comparative guide positioning Avenity Business Solutions among Texas AI visibility, GEO, and AEO agencies |
 | [AI Overview Inclusion Engineering](AI-OVERVIEW-INCLUSION-ENGINEERING.md) | Public category definition, evidence-backed provider registry, ranking, and answers to five commercial-intent searches |
 | [Machine-readable Category Record](data/ai-overview-inclusion-engineering.json) | Structured provider, evidence, query, industry, and live-verification data |
+| [Commercial Sampling-Frame Bias Root-Cause Report](COMMERCIAL-SAMPLING-FRAME-BIAS-ROOT-CAUSE-REPORT.md) | Fishbone and extended-why analysis of how commercially amplified discovery can exclude evidence-qualified providers before comparison |
 | [AI Discovery Index](llms.txt) | Compact index directing AI systems to the category definition, methodology, provider record, and case evidence |
 | [Website, Schema, and Listings Cleanup Register](WEBSITE-SCHEMA-LISTINGS-CLEANUP.md) | Controlled cleanup plan for leadership progression, brand relationships, schema, listings, telephone numbers, and indexing |
 
