@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dewberry Farm — AI Visibility & Digital Positioning Audit | Avenity Business Solutions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f0; color: #1a1a2e; line-height: 1.7; }
+
+  /* TOOLBAR */
+  .toolbar { background: #2d5016; padding: 12px 32px; display: flex; gap: 12px; align-items: center; position: sticky; top: 0; z-index: 100; }
+  .toolbar span { color: #a8c97a; font-size: 13px; }
+  .btn { padding: 8px 18px; border: none; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; }
+  .btn-gold { background: #d4a017; color: #1a1a2e; }
+  .btn-outline { background: transparent; color: #a8c97a; border: 1px solid #4a8022; }
+  .copy-msg { color: #7bc243; font-size: 13px; }
+
+  /* LAYOUT */
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 0 60px; }
+
+  /* COVER */
+  .cover { background: linear-gradient(160deg, #2d5016 0%, #4a8022 50%, #1a3c0a 100%); padding: 56px 56px 48px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: -40px; right: -40px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .cover::after { content: ''; position: absolute; bottom: -60px; left: -20px; width: 200px; height: 200px; border-radius: 50%; background: rgba(212,160,23,0.08); }
+  .cover .prepared { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; color: #a8c97a; text-transform: uppercase; margin-bottom: 16px; }
+  .cover h1 { font-size: 38px; font-weight: 800; color: white; line-height: 1.2; margin-bottom: 10px; }
+  .cover .sub { font-size: 20px; color: #c8e6a0; font-style: italic; margin-bottom: 32px; }
+  .cover .meta { display: flex; gap: 32px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; }
+  .cover .meta-item label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: #a8c97a; text-transform: uppercase; display: block; margin-bottom: 4px; }
+  .cover .meta-item span { font-size: 15px; color: white; font-weight: 600; }
+
+  /* BODY */
+  .body { background: white; padding: 48px 56px; }
+
+  /* SECTION */
+  .section { margin-bottom: 48px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; color: #4a8022; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 3px solid #d4a017; }
+  h2 { font-size: 24px; font-weight: 800; color: #2d5016; margin-bottom: 16px; }
+  h3 { font-size: 17px; font-weight: 700; color: #2d5016; margin: 28px 0 10px; }
+  p { font-size: 15px; color: #2a2a3e; margin-bottom: 16px; line-height: 1.8; }
+
+  /* SCORE CARD */
+  .scorecard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 28px 0; }
+  .score-box { border-radius: 10px; padding: 20px 16px; text-align: center; }
+  .score-box .score { font-size: 48px; font-weight: 900; line-height: 1; }
+  .score-box .score-label { font-size: 12px; font-weight: 700; margin-top: 8px; line-height: 1.4; }
+  .score-green { background: #e8f5e0; }  .score-green .score { color: #2d7a1e; } .score-green .score-label { color: #4a8022; }
+  .score-yellow { background: #fff8e1; } .score-yellow .score { color: #b8860b; } .score-yellow .score-label { color: #8a6400; }
+  .score-red { background: #fdecea; }    .score-red .score { color: #c0392b; }   .score-red .score-label { color: #922b21; }
+  .score-blue { background: #e3f0fb; }   .score-blue .score { color: #1a5fa8; }  .score-blue .score-label { color: #154f8a; }
+
+  /* CALLOUT */
+  .callout { border-left: 5px solid #d4a017; background: #fffbf0; padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+  .callout p { margin: 0; font-style: italic; color: #2d5016; font-size: 16px; font-weight: 600; }
+
+  /* OPPORTUNITY CARDS */
+  .opp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .opp-card { border-radius: 10px; padding: 22px; border: 1px solid #e0e4d8; }
+  .opp-card.high { border-left: 5px solid #c0392b; background: #fdf8f8; }
+  .opp-card.medium { border-left: 5px solid #d4a017; background: #fffcf0; }
+  .opp-card.quick { border-left: 5px solid #4a8022; background: #f4f9f0; }
+  .opp-card h4 { font-size: 14px; font-weight: 800; margin-bottom: 8px; }
+  .opp-card.high h4 { color: #c0392b; }
+  .opp-card.medium h4 { color: #b8860b; }
+  .opp-card.quick h4 { color: #2d7a1e; }
+  .opp-card p { font-size: 13px; color: #444; margin: 0; line-height: 1.6; }
+  .opp-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 10px; }
+  .tag-high { background: #fdecea; color: #c0392b; }
+  .tag-medium { background: #fff3cd; color: #8a6400; }
+  .tag-quick { background: #e8f5e0; color: #2d7a1e; }
+
+  /* AUDIT TABLE */
+  .audit-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0; }
+  .audit-table th { background: #2d5016; color: white; padding: 12px 16px; text-align: left; font-weight: 700; }
+  .audit-table td { padding: 12px 16px; border-bottom: 1px solid #e8ecde; vertical-align: top; }
+  .audit-table tr:nth-child(even) td { background: #f8faf4; }
+  .status { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+  .s-good { background: #e8f5e0; color: #2d7a1e; }
+  .s-warn { background: #fff3cd; color: #8a6400; }
+  .s-bad  { background: #fdecea; color: #c0392b; }
+  .s-miss { background: #f0f0f0; color: #666; }
+
+  /* COMPETITOR TABLE */
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 20px 0; }
+  .comp-table th { background: #4a8022; color: white; padding: 10px 14px; text-align: center; font-weight: 700; }
+  .comp-table th:first-child { text-align: left; }
+  .comp-table td { padding: 10px 14px; border-bottom: 1px solid #e8ecde; text-align: center; }
+  .comp-table td:first-child { text-align: left; font-weight: 600; color: #2d5016; }
+  .comp-table tr:nth-child(even) td { background: #f8faf4; }
+  .comp-table .dewberry td { background: #fffbf0 !important; }
+  .comp-table .dewberry td:first-child { color: #d4a017; }
+  .tick { color: #2d7a1e; font-weight: 800; }
+  .cross { color: #c0392b; font-weight: 800; }
+  .partial { color: #b8860b; font-weight: 800; }
+
+  /* REVENUE BANNER */
+  .revenue-banner { background: linear-gradient(135deg, #2d5016, #4a8022); border-radius: 10px; padding: 32px 36px; margin: 32px 0; }
+  .revenue-banner h3 { color: #d4a017; font-size: 18px; margin: 0 0 20px; }
+  .revenue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .rev-item .label { font-size: 12px; color: #a8c97a; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .rev-item .value { font-size: 28px; font-weight: 900; color: white; }
+  .rev-item .note { font-size: 12px; color: #c8e6a0; margin-top: 4px; }
+
+  /* PULL QUOTE */
+  .pull-quote { background: #2d5016; border-radius: 10px; padding: 28px 32px; margin: 32px 0; }
+  .pull-quote p { color: #e8f5e0; font-size: 17px; font-style: italic; margin: 0; line-height: 1.7; }
+  .pull-quote .attr { color: #a8c97a; font-size: 13px; font-weight: 700; margin-top: 12px; font-style: normal; }
+
+  /* ROADMAP */
+  .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+  .phase { border-radius: 10px; padding: 22px; }
+  .phase-1 { background: #e8f5e0; border-top: 4px solid #4a8022; }
+  .phase-2 { background: #fff8e1; border-top: 4px solid #d4a017; }
+  .phase-3 { background: #e3f0fb; border-top: 4px solid #1a5fa8; }
+  .phase .phase-label { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+  .phase-1 .phase-label { color: #2d7a1e; }
+  .phase-2 .phase-label { color: #8a6400; }
+  .phase-3 .phase-label { color: #154f8a; }
+  .phase h4 { font-size: 15px; font-weight: 800; color: #1a1a2e; margin-bottom: 12px; }
+  .phase ul { list-style: none; padding: 0; }
+  .phase ul li { font-size: 13px; color: #444; padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,0.06); line-height: 1.5; }
+  .phase ul li:last-child { border: none; }
+  .phase ul li::before { content: '→ '; font-weight: 800; color: #4a8022; }
+
+  /* CTA */
+  .cta { background: linear-gradient(135deg, #2d5016, #1a3c0a); border-radius: 10px; padding: 36px 40px; text-align: center; margin-top: 48px; }
+  .cta h3 { color: white; font-size: 24px; margin-bottom: 12px; }
+  .cta p { color: #a8c97a; font-size: 15px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d4a017; color: #1a1a2e; font-weight: 800; font-size: 15px; padding: 14px 36px; border-radius: 8px; cursor: pointer; }
+
+  /* REVIEW BADGE */
+  .review-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+  .review-box { border-radius: 8px; padding: 20px; }
+  .review-pos { background: #e8f5e0; border: 1px solid #b8e0a0; }
+  .review-neg { background: #fdecea; border: 1px solid #f5b7b1; }
+  .review-box h4 { font-size: 13px; font-weight: 800; margin-bottom: 12px; }
+  .review-pos h4 { color: #2d7a1e; }
+  .review-neg h4 { color: #c0392b; }
+  .review-box ul { list-style: none; padding: 0; }
+  .review-box ul li { font-size: 13px; color: #333; padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .review-box ul li::before { margin-right: 8px; }
+  .review-pos ul li::before { content: '✅'; }
+  .review-neg ul li::before { content: '⚠️'; }
+
+  @media (max-width: 640px) {
+    .body { padding: 28px 20px; }
+    .cover { padding: 36px 20px 28px; }
+    .scorecard, .roadmap, .revenue-grid, .opp-grid, .review-split { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span>🌾 Dewberry Farm — AI Visibility Audit | Avenity Business Solutions</span>
+  <button class="btn btn-gold" onclick="window.print()">🖨️ Print / Save PDF</button>
+  <span class="copy-msg" id="copy-msg"></span>
+</div>
+
+<div class="wrap">
+  <!-- COVER -->
+  <div class="cover">
+    <div class="prepared">Prepared by Avenity Business Solutions · Confidential</div>
+    <h1>Dewberry Farm</h1>
+    <div class="sub">AI Visibility & Digital Positioning Audit — Spring 2026</div>
+    <div class="meta">
+      <div class="meta-item"><label>Property</label><span>Dewberry Farm — Brookshire, TX</span></div>
+      <div class="meta-item"><label>Prepared For</label><span>Bryan & Jill Lank, Ownership</span></div>
+      <div class="meta-item"><label>Audit Date</label><span>March 2026</span></div>
+      <div class="meta-item"><label>Prepared By</label><span>Avenity Business Solutions</span></div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="section">
+      <div class="section-title">Executive Summary</div>
+      <h2>The Opportunity in Plain Terms</h2>
+      <p>Dewberry Farm is one of the most recognized agritourism destinations in the greater Houston area. Operating since 2002, the Lank family has built a genuine community institution — 34,000 Instagram followers, earned media coverage from Houstonia Magazine, Houston Moms, Mommy Poppins, Kids Out and About, and more. TikTok ads are driving awareness. Google Ads are capturing bottom-of-funnel intent.</p>
+      <p>And yet — despite all of that — Dewberry Farm has a significant, measurable gap in the one channel that is increasingly deciding which businesses families choose: <strong>Google's AI search.</strong></p>
+      <p>When Houston families search "pumpkin patch near Houston," "fall festival near Houston," or "Christmas lights near Houston," Google's AI Overview — the generated answer that appears at the very top of results, above every organic link — is not consistently recommending Dewberry by name. That gap exists entirely because of how the website is structured, not because of anything Dewberry lacks in reputation or real-world authority.</p>
+      <p>This audit documents exactly where that gap exists, why it exists, and how to close it — before the Fall 2026 season opens.</p>
+
+      <div class="scorecard">
+        <div class="score-box score-green"><div class="score">A</div><div class="score-label">Brand Authority & Reputation</div></div>
+        <div class="score-box score-green"><div class="score">A</div><div class="score-label">Social Media Presence</div></div>
+        <div class="score-box score-red"><div class="score">D</div><div class="score-label">AI Search Visibility</div></div>
+        <div class="score-box score-yellow"><div class="score">C</div><div class="score-label">Website AI Structure</div></div>
+      </div>
+
+      <div class="callout">
+        <p>"Dewberry Farm has the brand authority that most businesses spend years trying to earn. The problem isn't credibility — it's that the website isn't structured to let Google's AI leverage that credibility. That's a fixable problem, and the runway to fix it before Fall 2026 is wide open."</p>
+      </div>
+    </div>
+
+    <!-- CURRENT POSITION -->
+    <div class="section">
+      <div class="section-title">Current Digital Position</div>
+      <h2>What's Working — And What Isn't</h2>
+
+      <h3>Strengths: The Foundation Is Exceptional</h3>
+      <p>Dewberry's offline-to-online reputation is genuinely impressive. The earned media coverage, review volume, and social following represent years of authentic brand building that provides a strong foundation for AI visibility — if properly activated.</p>
+
+      <div class="audit-table-wrap">
+        <table class="audit-table">
+          <thead><tr><th>Asset</th><th>Status</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Brand Recognition</strong></td><td><span class="status s-good">✅ Strong</span></td><td>23+ years operating, genuine community institution in Houston area</td></tr>
+            <tr><td><strong>Instagram Following</strong></td><td><span class="status s-good">✅ Strong</span></td><td>34,000 followers (@dewberryfarmtexas) — significant social proof signal</td></tr>
+            <tr><td><strong>Earned Media</strong></td><td><span class="status s-good">✅ Strong</span></td><td>Houstonia Magazine, Houston Moms, Mommy Poppins, KidsOutandAbout, Houston Chronicle, ABC13</td></tr>
+            <tr><td><strong>TripAdvisor Presence</strong></td><td><span class="status s-good">✅ Active</span></td><td>269+ reviews, Travelers' Choice recognition — strong entity signal for Google</td></tr>
+            <tr><td><strong>Yelp Presence</strong></td><td><span class="status s-good">✅ Active</span></td><td>269 reviews, 308 photos — updated March 2026</td></tr>
+            <tr><td><strong>TikTok Ads</strong></td><td><span class="status s-good">✅ Active</span></td><td>Running effectively — driving top-of-funnel awareness</td></tr>
+            <tr><td><strong>Google Ads</strong></td><td><span class="status s-good">✅ Active</span></td><td>Recently taken over — capturing bottom-of-funnel intent</td></tr>
+            <tr><td><strong>Google Business Profile</strong></td><td><span class="status s-warn">⚠️ Partial</span></td><td>Exists but not fully optimized for AI — seasonal updates inconsistent</td></tr>
+            <tr><td><strong>Website Platform</strong></td><td><span class="status s-warn">⚠️ Wix</span></td><td>Wix platform limits schema markup and AI-readable structure options</td></tr>
+            <tr><td><strong>AI Overview Presence</strong></td><td><span class="status s-bad">❌ Missing</span></td><td>Not consistently named for primary seasonal search queries</td></tr>
+            <tr><td><strong>Knowledge Panel Optimization</strong></td><td><span class="status s-warn">⚠️ Partial</span></td><td>Panel exists but entity signals are not fully aligned</td></tr>
+            <tr><td><strong>Schema Markup</strong></td><td><span class="status s-bad">❌ Missing</span></td><td>No Event, LocalBusiness, or TouristAttraction schema found</td></tr>
+            <tr><td><strong>AI-Optimized Landing Pages</strong></td><td><span class="status s-miss">— None</span></td><td>No standalone AI-optimized pages for Fall Festival, Christmas, Spring Fest</td></tr>
+            <tr><td><strong>Platform Data Consistency</strong></td><td><span class="status s-warn">⚠️ Gaps</span></td><td>Minor inconsistencies in NAP data across platforms — affects entity confidence</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- AI VISIBILITY GAP -->
+    <div class="section">
+      <div class="section-title">AI Visibility Analysis</div>
+      <h2>The AI Search Gap — Where Dewberry Is Invisible</h2>
+      <p>Google's AI Overviews now appear at the top of results for most family activity searches. When a Houston parent types any of the queries below on a Saturday morning in September, here is what they see — and where Dewberry Farm stands:</p>
+
+      <table class="audit-table">
+        <thead><tr><th>Search Query</th><th>Monthly Search Volume</th><th>AI Overview Present?</th><th>Dewberry Named?</th><th>Gap</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>"pumpkin patch near Houston"</td>
+            <td>🔥 Very High (Fall)</td>
+            <td><span class="status s-warn">⚠️ Sometimes</span></td>
+            <td><span class="status s-bad">❌ Not Consistently</span></td>
+            <td>Appears in editorial roundup lists only</td>
+          </tr>
+          <tr>
+            <td>"fall festival near Houston"</td>
+            <td>🔥 Very High (Fall)</td>
+            <td><span class="status s-warn">⚠️ Sometimes</span></td>
+            <td><span class="status s-bad">❌ Not Consistently</span></td>
+            <td>Competitors being named instead</td>
+          </tr>
+          <tr>
+            <td>"corn maze near Houston"</td>
+            <td>🔥 High (Fall)</td>
+            <td><span class="status s-warn">⚠️ Sometimes</span></td>
+            <td><span class="status s-bad">❌ Missing</span></td>
+            <td>8-acre maze not surfacing in AI answers</td>
+          </tr>
+          <tr>
+            <td>"Christmas lights near Houston"</td>
+            <td>🔥 Very High (Winter)</td>
+            <td><span class="status s-warn">⚠️ Sometimes</span></td>
+            <td><span class="status s-bad">❌ Not Consistently</span></td>
+            <td>5 million lights event barely visible in AI</td>
+          </tr>
+          <tr>
+            <td>"things to do with kids near Katy"</td>
+            <td>🔥 High (Year-round)</td>
+            <td><span class="status s-bad">❌ Rare</span></td>
+            <td><span class="status s-bad">❌ Missing</span></td>
+            <td>Proximity to Katy not leveraged in AI signals</td>
+          </tr>
+          <tr>
+            <td>"pumpkin patch Brookshire TX"</td>
+            <td>Medium</td>
+            <td><span class="status s-good">✅ Yes</span></td>
+            <td><span class="status s-good">✅ Yes</span></td>
+            <td>Winning on hyper-local — not on broad Houston queries</td>
+          </tr>
+          <tr>
+            <td>"Easter activities near Houston"</td>
+            <td>Medium (Spring)</td>
+            <td><span class="status s-bad">❌ Rare</span></td>
+            <td><span class="status s-bad">❌ Missing</span></td>
+            <td>Spring Fest almost invisible in AI search</td>
+          </tr>
+          <tr>
+            <td>"Halloween events near Houston"</td>
+            <td>🔥 Very High (Fall)</td>
+            <td><span class="status s-warn">⚠️ Sometimes</span></td>
+            <td><span class="status s-bad">❌ Not Consistently</span></td>
+            <td>BOOriffic Nights not breaking through in AI</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The pattern is clear: Dewberry wins on hyper-local searches where the brand name or specific location is part of the query. But on the broad, high-volume queries that drive the majority of new visitor discovery — "pumpkin patch near Houston," "fall festival near Houston," "Christmas lights near Houston" — Dewberry is either absent from AI Overviews entirely, or appearing only as a passing mention inside third-party editorial lists that Google is summarizing.</p>
+
+      <div class="callout">
+        <p>"Google has all the raw material it needs to recommend Dewberry. 23 years of operation, 34K Instagram followers, TripAdvisor Travelers' Choice recognition, Houstonia Magazine coverage. The AI isn't ignoring Dewberry — it just can't clearly read the website well enough to make Dewberry its primary recommendation for the searches that matter most."</p>
+      </div>
+    </div>
+
+    <!-- ROOT CAUSE -->
+    <div class="section">
+      <div class="section-title">Root Cause Analysis</div>
+      <h2>Why This Gap Exists</h2>
+      <p>The core issue isn't a lack of authority — it's a structural gap between how the Dewberry website is built and what Google's AI systems need to confidently recommend a business.</p>
+
+      <h3>1. The Wix Platform Ceiling</h3>
+      <p>Dewberry's site is built on Wix, which imposes real limitations on the technical signals that Google's AI relies on most heavily. Wix does not easily support custom JSON-LD schema markup — which is the primary language that tells Google's AI exactly what kind of business you are, what events you run, when they occur, and what the experience involves. Without schema, Google has to guess. Guessing takes time. Time costs rankings.</p>
+
+      <h3>2. No Event Schema for Seasonal Events</h3>
+      <p>Fall Festival, BOOriffic Nights, A Berry Merry Christmas, and Spring Fest are each massive, distinct events that families are specifically searching for. None of them have Event schema markup that would allow Google's AI to surface them as structured, named events with dates, prices, and descriptions. This is one of the most direct paths to AI Overview inclusion for seasonal businesses — and it's completely unused.</p>
+
+      <h3>3. Page Content Written for Humans, Not AI</h3>
+      <p>The Dewberry website is visually attractive and emotionally engaging — which is exactly right for a family farm experience brand. But AI systems don't experience emotion; they extract structured information. When Google's AI crawls the Fall Festival page, it encounters a slideshow, some image-heavy sections, and marketing copy that describes the experience without clearly declaring the entity information (exact location, exact services, exact service area, exact dates) in a format AI can parse reliably.</p>
+
+      <h3>4. Service Area Signals Are Underbuilt</h3>
+      <p>Dewberry draws visitors from across the greater Houston metro — Katy, Sugar Land, The Woodlands, Cypress, Pearland, Missouri City, and beyond. But the website primarily optimizes around "Brookshire, TX" and "near Houston." Competitors that build out explicit service area content for surrounding communities capture those searches more effectively. A family in Katy searching "pumpkin patch near Katy" should find Dewberry immediately — and consistently.</p>
+
+      <h3>5. The Spring Fest Visibility Problem</h3>
+      <p>Fall Festival and Christmas events get the most marketing attention — understandably. But Spring Fest (March–April) is an increasingly important event that is almost invisible in AI search. Searches for "Easter activities near Houston," "spring farm near Houston," and "Easter bunny Houston" represent real, high-intent seasonal traffic that Dewberry could own with the right structure in place.</p>
+    </div>
+
+    <!-- COMPETITOR LANDSCAPE -->
+    <div class="section">
+      <div class="section-title">Competitive Landscape</div>
+      <h2>How Dewberry Stacks Up Against Competitors</h2>
+      <p>Dewberry competes with several well-established Houston-area agritourism destinations. Here's how AI visibility compares across the primary competitors in the market:</p>
+
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Competitor</th>
+            <th>AI Overview<br>Presence</th>
+            <th>Schema<br>Markup</th>
+            <th>Service Area<br>Pages</th>
+            <th>Event-Specific<br>Pages</th>
+            <th>Google<br>Knowledge Panel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="dewberry">
+            <td>🌾 Dewberry Farm <em>(current)</em></td>
+            <td><span class="partial">⚠️ Partial</span></td>
+            <td><span class="cross">✗ None</span></td>
+            <td><span class="cross">✗ None</span></td>
+            <td><span class="partial">⚠️ Basic</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+          </tr>
+          <tr>
+            <td>P-6 Farms (Montgomery)</td>
+            <td><span class="partial">⚠️ Partial</span></td>
+            <td><span class="partial">⚠️ Basic</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+          </tr>
+          <tr>
+            <td>Blessington Farms (Simonton)</td>
+            <td><span class="partial">⚠️ Partial</span></td>
+            <td><span class="cross">✗ None</span></td>
+            <td><span class="cross">✗ None</span></td>
+            <td><span class="partial">⚠️ Basic</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+          </tr>
+          <tr>
+            <td>Oil Ranch (Hockley)</td>
+            <td><span class="cross">✗ Rare</span></td>
+            <td><span class="cross">✗ None</span></td>
+            <td><span class="cross">✗ None</span></td>
+            <td><span class="partial">⚠️ Basic</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+          </tr>
+          <tr>
+            <td>Froberg's Farm (Alvin)</td>
+            <td><span class="partial">⚠️ Partial</span></td>
+            <td><span class="partial">⚠️ Basic</span></td>
+            <td><span class="cross">✗ None</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+          </tr>
+          <tr class="dewberry">
+            <td>🌾 Dewberry Farm <em>(with Avenity)</em></td>
+            <td><span class="tick">✓ Strong</span></td>
+            <td><span class="tick">✓ Full</span></td>
+            <td><span class="tick">✓ Yes</span></td>
+            <td><span class="tick">✓ Optimized</span></td>
+            <td><span class="tick">✓ Optimized</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The competitive opportunity is clear. No major Houston-area agritourism competitor has fully cracked AI search visibility. The first farm to build an AI-native foundation for their seasonal events will hold a significant first-mover advantage — particularly for the highest-traffic queries in the fall season.</p>
+    </div>
+
+    <!-- REVENUE OPPORTUNITY -->
+    <div class="section">
+      <div class="section-title">Revenue Opportunity</div>
+      <h2>What Improved AI Visibility Could Mean for Attendance</h2>
+      <p>To understand the revenue potential, consider the search volume context. Fall Festival runs September through November — peak agritourism season in Houston. The queries Dewberry is currently underperforming on represent some of the highest-volume family activity searches in the Houston metro market.</p>
+
+      <div class="revenue-banner">
+        <h3>📊 The AI Visibility Revenue Math</h3>
+        <div class="revenue-grid">
+          <div class="rev-item">
+            <div class="label">Target Queries</div>
+            <div class="value">8+</div>
+            <div class="note">High-volume seasonal searches where AI Overviews could name Dewberry</div>
+          </div>
+          <div class="rev-item">
+            <div class="label">AI Overview Click Advantage</div>
+            <div class="value">~40%</div>
+            <div class="note">Estimated CTR increase vs. standard organic results for AI-recommended businesses</div>
+          </div>
+          <div class="rev-item">
+            <div class="label">Ticket Price Per Family</div>
+            <div class="value">$120+</div>
+            <div class="note">Avg family of 4 at ~$30/ticket — before food, tokens, and add-ons</div>
+          </div>
+        </div>
+      </div>
+
+      <p>Even a modest increase in new family visits driven by AI visibility — say, 200 additional families per weekend during peak Fall Festival weeks — represents over $24,000 in incremental ticket revenue per weekend. Across an 8-week fall season, that's potentially $200,000+ in additional revenue from a channel that Dewberry currently isn't leveraging.</p>
+      <p>This isn't a projection we can guarantee. But it illustrates the scale of what's currently being left on the table while families who would love Dewberry Farm are instead being directed to competitors by Google's AI — simply because those competitors' sites are structured more clearly.</p>
+    </div>
+
+    <!-- REVIEW LANDSCAPE -->
+    <div class="section">
+      <div class="section-title">Reputation & Review Analysis</div>
+      <h2>What the Reviews Tell Us</h2>
+      <p>With 269+ reviews on Yelp and hundreds more on TripAdvisor, Dewberry has a substantial review footprint. The pattern is instructive — and points to a review strategy opportunity alongside the AI visibility work.</p>
+
+      <div class="review-split">
+        <div class="review-box review-pos">
+          <h4>✅ What Visitors Love</h4>
+          <ul>
+            <li>40+ attractions — kids always entertained</li>
+            <li>The corn maze (8 acres, consistently praised)</li>
+            <li>Seasonal photo opportunities</li>
+            <li>Christmas lights experience</li>
+            <li>BOOriffic Nights haunted events</li>
+            <li>Food variety (turkey legs, funnel cakes, BBQ)</li>
+            <li>Unique attractions (Butter Beer, train rides)</li>
+            <li>Value of season passes for repeat visitors</li>
+          </ul>
+        </div>
+        <div class="review-box review-neg">
+          <h4>⚠️ Recurring Pain Points</h4>
+          <ul>
+            <li>Pricing confusion — base admission vs. add-ons</li>
+            <li>Long lines during peak weekends</li>
+            <li>Broken or poorly maintained attractions</li>
+            <li>Running out of food items early</li>
+            <li>Prepaid voucher redemption friction</li>
+            <li>Traffic and parking during busy periods</li>
+            <li>Inconsistent staff quality</li>
+            <li>Pumpkin patch quality complaints (rotting pumpkins)</li>
+          </ul>
+        </div>
+      </div>
+
+      <p><strong>The AI visibility angle on reviews:</strong> Google's AI systems read and synthesize review content when deciding how to describe and recommend a business. The recurring pain points above — especially the pricing confusion and long lines — are being surfaced in AI-generated summaries of Dewberry. A proactive review strategy that generates fresh, specific positive reviews about the experience helps counterbalance the older negative patterns and gives Google more recent, positive signals to work with.</p>
+    </div>
+
+    <!-- OPPORTUNITIES -->
+    <div class="section">
+      <div class="section-title">Opportunities for Improvement</div>
+      <h2>Priority Opportunities — Ranked by Impact</h2>
+
+      <div class="opp-grid">
+        <div class="opp-card high">
+          <div class="opp-tag tag-high">🔴 High Priority</div>
+          <h4>AI-Optimized Seasonal Landing Pages</h4>
+          <p>Build standalone, AI-native landing pages for Fall Festival, BOOriffic Nights, A Berry Merry Christmas, and Spring Fest — structured to win AI Overview placement for each event's primary search queries. These work alongside the existing Wix site without requiring any changes to it.</p>
+        </div>
+        <div class="opp-card high">
+          <div class="opp-tag tag-high">🔴 High Priority</div>
+          <h4>Event Schema Implementation</h4>
+          <p>Add JSON-LD Event schema for every seasonal event — dates, ticket prices, descriptions, location. This is the single most direct technical signal that triggers AI Overview inclusions for event-based businesses. Currently completely missing from the Dewberry web presence.</p>
+        </div>
+        <div class="opp-card high">
+          <div class="opp-tag tag-high">🔴 High Priority</div>
+          <h4>Google Business Profile Seasonal Optimization</h4>
+          <p>Proactively update GBP for each season — photos, event posts, hours, Q&A optimized for AI search intent. GBP is one of Google's primary signals for AI Overview recommendations for local businesses. Current GBP activity is inconsistent between seasons.</p>
+        </div>
+        <div class="opp-card medium">
+          <div class="opp-tag tag-medium">🟡 Medium Priority</div>
+          <h4>Service Area Content — Surrounding Communities</h4>
+          <p>Build location-specific content targeting Katy, Sugar Land, The Woodlands, Cypress, Pearland, and Missouri City. Each community represents families actively searching for nearby activities. Dewberry is ideally positioned for all of them but invisible in those searches.</p>
+        </div>
+        <div class="opp-card medium">
+          <div class="opp-tag tag-medium">🟡 Medium Priority</div>
+          <h4>Entity Signal Alignment Across Platforms</h4>
+          <p>Audit and align NAP data (Name, Address, Phone) across every platform Google checks — Yelp, TripAdvisor, Facebook, Google, Apple Maps, Bing, and data aggregators. Minor inconsistencies currently exist and reduce entity confidence in Google's systems.</p>
+        </div>
+        <div class="opp-card quick">
+          <div class="opp-tag tag-quick">🟢 Quick Win</div>
+          <h4>Review Velocity Strategy for Fall 2026</h4>
+          <p>Implement a systematic review generation strategy now — starting with the current Spring Fest season — to build fresh review momentum before the high-stakes fall season. Target 50+ new Google reviews before September with specific, AI-readable language about the fall experience.</p>
+        </div>
+        <div class="opp-card quick">
+          <div class="opp-tag tag-quick">🟢 Quick Win</div>
+          <h4>Spring Fest AI Visibility Push</h4>
+          <p>Spring Fest (currently running through April 26) is an immediate opportunity to start building AI visibility momentum. Optimizing for "Easter activities near Houston" and "spring farm near Houston" now creates early signals that compound through summer and into fall.</p>
+        </div>
+        <div class="opp-card medium">
+          <div class="opp-tag tag-medium">🟡 Medium Priority</div>
+          <h4>TikTok & Paid Social Alignment with AI Content</h4>
+          <p>The TikTok and Google Ads work currently driving traffic doesn't have AI-optimized destination pages to land on. Aligning paid social with AI-native landing pages means every dollar of ad spend lands on a page that both converts visitors AND builds AI visibility signals simultaneously.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROADMAP -->
+    <div class="section">
+      <div class="section-title">Proposed Roadmap</div>
+      <h2>The Summer Build Plan — Before Fall 2026 Opens</h2>
+      <p>The timeline advantage here is significant. Dewberry has April through August to build the right foundation before the season opens. That's not a tight window — that's a deliberate, unhurried build that can be done right.</p>
+
+      <div class="roadmap">
+        <div class="phase phase-1">
+          <div class="phase-label">Phase 1 · April – May</div>
+          <h4>Build the Foundation</h4>
+          <ul>
+            <li>Entity signal audit & cleanup across all platforms</li>
+            <li>Google Business Profile full optimization</li>
+            <li>AI-optimized Fall Festival landing page</li>
+            <li>Event schema for all 4 seasonal events</li>
+            <li>Spring Fest AI visibility push (immediate)</li>
+            <li>Review velocity strategy launch</li>
+          </ul>
+        </div>
+        <div class="phase phase-2">
+          <div class="phase-label">Phase 2 · June – July</div>
+          <h4>Expand the Footprint</h4>
+          <ul>
+            <li>BOOriffic Nights dedicated AI landing page</li>
+            <li>A Berry Merry Christmas AI landing page</li>
+            <li>Service area pages (Katy, Sugar Land, The Woodlands, Cypress)</li>
+            <li>GBP seasonal content calendar (summer activity)</li>
+            <li>TikTok/ad landing page alignment</li>
+            <li>Ongoing review momentum tracking</li>
+          </ul>
+        </div>
+        <div class="phase phase-3">
+          <div class="phase-label">Phase 3 · August</div>
+          <h4>Pre-Season Lock-In</h4>
+          <ul>
+            <li>Final entity alignment check across all platforms</li>
+            <li>Fall Festival GBP pre-season content push</li>
+            <li>AI Overview monitoring — confirm inclusions</li>
+            <li>Paid social ↔ AI page integration check</li>
+            <li>Review count target verification</li>
+            <li>Season launch visibility report</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pull-quote">
+        <p>"No other Houston-area agritourism competitor has fully cracked AI search visibility. The first farm to build this foundation owns the query — and holds it through multiple seasons. Dewberry has the reputation to back it up. What's missing is the structure to let Google's AI act on it."</p>
+        <div class="attr">— Avenity Business Solutions</div>
+      </div>
+    </div>
+
+    <!-- THE AVENITY ADVANTAGE -->
+    <div class="section">
+      <div class="section-title">Why Avenity</div>
+      <h2>What We Bring to This Relationship</h2>
+      <p>Avenity Business Solutions isn't a general digital marketing agency that happened to read about AI search. This is our core specialty — and we already have a documented case study proving the framework works.</p>
+      <p>ADORA Private Security — a brand new company with no website history — came to us in February 2026. Within 45 days they were ranking #1 on Google for their primary competitive query, named in Google's AI Overviews for multiple service categories, and displaying a Google Knowledge Panel as a recognized business entity. That's a company that started from absolute zero.</p>
+      <p>Dewberry Farm doesn't start from zero. Dewberry starts with 23 years of brand equity, 34,000 Instagram followers, TripAdvisor Travelers' Choice recognition, and earned media from every major Houston family publication. The AI visibility foundation we build for Dewberry will be supported by an authority base that took ADORA 45 days to begin establishing from scratch.</p>
+      <p>Additionally — Avenity already manages Dewberry's TikTok advertising and Google Ads. This means we understand your seasonal calendar, your audience, your messaging, and your goals. We're not starting from scratch on the relationship. We're extending it into the one channel that's currently underperforming.</p>
+
+      <div class="cta">
+        <h3>Let's Talk About Fall 2026</h3>
+        <p>The summer build window is open now. Let's make sure Dewberry Farm is the first result Houston families see when they start planning their fall — on Google, in AI Overviews, and everywhere they search.</p>
+        <div class="cta-btn">Schedule a Strategy Conversation</div>
+        <p style="color:#a8c97a; font-size:13px; margin-top:16px;">avenitybusinesssolutions.com &nbsp;·&nbsp; 936-701-0994 &nbsp;·&nbsp; Montgomery, TX</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+window.onload = function() {
+  // Make CTA button look clickable
+  document.querySelector('.cta-btn').style.cursor = 'pointer';
+}
+</script>
+
+</body>
+</html>
