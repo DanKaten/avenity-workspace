@@ -6,6 +6,17 @@ A running, dated count of every screenshot- or query-log-verified AI-system plac
 
 This is a living document. New confirmed placements get added with their date; existing entries are never backdated or reworded after the fact — if a result changes (holds, expands, or drops), that's a new dated entry, not an edit to the old one.
 
+## Running total by month
+
+| Month | New placements | Running total |
+|---|---|---|
+| March 2026 | 3 | 3 |
+| April 2026 | 13 | 16 |
+| May 2026 | 1 | 17 |
+| June 2026 | 4 | 21 |
+| August 2026 | 2 | 23 |
+| September 2026 | 1 | 24 |
+
 ## How dates are sourced
 
 Where a case study states an exact capture date or timestamp (e.g., "captured August 24, 2026" or "12:22 PM CDT"), that date is used directly. Where a case study only states a season or a publish month ("spring 2026," "published June 2026"), the entry is bucketed to that month and marked *approximate*. Screenshot images embedded in the existing case studies are cropped to the browser window only — none currently include a visible system-clock timestamp in the corner, so date provenance here comes from the captions/labels already written into each case study, not from reading pixel timestamps off the images themselves.
@@ -20,6 +31,9 @@ Where a case study states an exact capture date or timestamp (e.g., "captured Au
 
 **Dewberry Farm** — Brookshire, TX
 - Google AI Overview · "pumpkin patch Brookshire TX" · Dewberry named — *audit dated March 2026*
+
+
+**Running total through March: 3**
 
 ## April 2026 *(approximate — bucketed to stated month)*
 
@@ -42,10 +56,16 @@ Where a case study states an exact capture date or timestamp (e.g., "captured Au
 - AI-driven placement · "indoor golf / golf simulator in Conroe"
 - AI-driven placement · "indoor golf bar"
 
+
+**Running total through April: 16**
+
 ## May 2026
 
 **Battlefield Trailer Solutions** — Conroe / Montgomery County, TX
 - Google AI Mode · 6x10 utility trailer rental / Conroe-area intent · named as top local choice — *documented May 25, 2026*
+
+
+**Running total through May: 17**
 
 ## June 2026 *(approximate — bucketed to stated month)*
 
@@ -55,11 +75,17 @@ Where a case study states an exact capture date or timestamp (e.g., "captured Au
 - Google Gemini · "best roofing company in Franklin TX" · named #1, "Best Truly Local Option"
 - Google Gemini · "roofing company in Franklin TX" · listed first with contact details
 
+
+**Running total through June: 21**
+
 ## August 2026
 
 **Radiate Coalition** — Honduras aftercare program
 - ChatGPT · "charities helping abused and trafficked girls in Honduras" · named first of five — *captured August 24, 2026*
 - ChatGPT · "long term aftercare for human trafficking survivors" · surfaces, no geography qualifier — *captured August 24, 2026*
+
+
+**Running total through August: 23**
 
 ## September 2026
 
@@ -67,6 +93,9 @@ Where a case study states an exact capture date or timestamp (e.g., "captured Au
 - ChatGPT · "pumpkin patch near houston" · Dewberry named first, "best overall" pick — *captured September 4, 2026*
 
 ---
+
+
+**Running total through September 4, 2026: 24**
 
 ## Known gaps in the record (not counted above)
 
