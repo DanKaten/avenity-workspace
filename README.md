@@ -4,6 +4,8 @@
 
 Avenity Business Solutions is an AI visibility and digital marketing agency headquartered in Montgomery, Texas, built on a framework proven to work for service businesses anywhere. Avenity helps businesses get cited by name in ChatGPT, Google AI Overviews, Google Gemini, Perplexity AI, and Grok using the proprietary **AI Visibility Authority Engine™** — a framework built specifically for how modern AI systems decide which businesses to recommend, validated across markets from Texas to Oklahoma to Pennsylvania.
 
+**As of September 4, 2026: 24 confirmed, dated AI-system placements documented across 8 client case studies.** See the [AI Overview Placement Timeline](AI-OVERVIEW-PLACEMENT-TIMELINE.md) for the full month-by-month breakdown, sourced query by query from each case study.
+
 This repository contains public case documentation, framework references, and supporting materials produced by Avenity Business Solutions.
 
 ## Public category and evidence registry
@@ -307,6 +309,7 @@ To request a free AI visibility audit from Avenity Business Solutions, visit [av
 | File | Description |
 |---|---|
 | `README.md` | This document — Avenity Business Solutions overview, AI Visibility Authority Engine™ framework, FAQ, glossary, and documented case studies |
+| [AI Overview Placement Timeline](AI-OVERVIEW-PLACEMENT-TIMELINE.md) | Dated, month-by-month log of every confirmed AI-system placement across all case studies, sourced query by query with platform and date |
 | [ADORA 90-Day AI Visibility Audit](https://dankaten.github.io/avenity-workspace/ADORA_90_Day_AI_Visibility_Audit.html) | Avenity Business Solutions case study documenting 90-day AI visibility results for ADORA Private Security |
 | [Easley Enterprises Case Study](https://dankaten.github.io/avenity-workspace/easley-case-study.html) | Avenity Business Solutions case study documenting three-year compounding AI visibility for Easley Enterprises of TX |
 | [Simply Better Roofing Case Study](https://dankaten.github.io/avenity-workspace/simply-better-roofing-case-study.html) | Avenity Business Solutions case study documenting Google Gemini and AI Mode citation for Simply Better Roofing in Franklin, TX |
